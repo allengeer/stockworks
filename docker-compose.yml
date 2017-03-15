@@ -14,3 +14,7 @@ services:
     ports:
      - "5000:5000"
     image: "allengeer/tickernews"
+  price:
+    ports:
+     - "5003:5000"
+    image: "mlf4aiur/stock-price"
