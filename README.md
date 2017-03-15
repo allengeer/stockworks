@@ -19,5 +19,6 @@ format
     python app.py <STOCK TICKER>
 
 Example for SNAP chat
+
     python app.py SNAP
 
