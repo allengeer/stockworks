@@ -17,7 +17,7 @@ if __name__ == '__main__':
     pricing = pricing.json()
     print "==================================================="
     print pricing['symbol'], pricing["price"], pricing["name"]
-    print "===== Running analysis on %d links =====" %len(listOfLinks)
+    print "======= Running analysis on %d links =======" %len(listOfLinks)
     for link in listOfLinks:
         q = requests.get("http://localhost:5001/scrape?url=%s" %link)
         content = q.content.decode('unicode_escape').encode('ascii','ignore')
