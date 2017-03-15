@@ -2,7 +2,7 @@ import requests
 import json
 import sys
 import numpy as np
-
+import time
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         ticker = sys.argv[1]
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     emotions = dict()
     pricing = requests.get("http://localhost:5003/stock/%s" % ticker)
     pricing = pricing.json()
-    print "==================================================="
+    print "============ %s =============" %time.strftime("%c")
     print pricing['symbol'], pricing["price"], pricing["name"]
     print "======= Running analysis on %d links =======" %len(listOfLinks)
     for link in listOfLinks:
