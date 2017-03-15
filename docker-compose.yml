@@ -1,0 +1,16 @@
+version: '2'
+services:
+  scrape:
+    ports:
+     - "5001:5000"
+    image: "allengeer/scraper"
+  tone:
+    ports:
+     - "5002:5000"
+    env_file:
+     - env.lst
+    image: "allengeer/toneanalysis"
+  news:
+    ports:
+     - "5000:5000"
+    image: "allengeer/tickernews"
