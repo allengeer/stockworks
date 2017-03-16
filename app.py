@@ -32,7 +32,7 @@ if __name__ == '__main__':
                         emotions[tonecat['tone_name']] = []
                     emotions.get(tonecat['tone_name']).append(float(tonecat['score']))
 
-
+    emotions["Normal"] = np.random.normal(0.5, 0.341, len(listOfLinks))
 
     # print "%s %s (%s)" %pricing["price"], pricing["name"], pricing["symbol"]
     print "%sMean\tVar\t\tStd\t\t\t(%s samples)" %('{0: <20}'.format('Emotion'),len(emotions.get("Anger")))
