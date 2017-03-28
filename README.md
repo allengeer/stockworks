@@ -1,6 +1,6 @@
 # stockworks
 This is a repository that attempts to orchestrate the use of our microservices
-into a coherent retrieval process.  This is simply a testing harness to proove out
+into a coherent retrieval process.  This is simply a testing harness to prove out
 the data flow is correct.
 
 
@@ -12,7 +12,7 @@ format
     BLUEMIXTONEURL=https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2016-05-19
     BLUEMIXUSER=<bluemixuserid>
     BLUEMIXPASS=<bluemixpassword>
-    
+
 Optional - you can additionally setup the tone service to use the optional Redis Sidecar cache
 as defined in the docker-compose file by setting the SIDECAR environment variable
 
