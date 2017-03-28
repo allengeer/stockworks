@@ -51,10 +51,10 @@ if __name__ == '__main__':
         t = threading.Thread(target=scrapeAnalyze, args=(link,))
         threads.append(t)
         t.start()
-        t.join()
+        # t.join()
 
-    # for t in threads:
-    #     t.join()
+    for t in threads:
+        t.join()
 
     emotions["Normal"] = np.random.normal(0.5, 0.341, len(listOfLinks))
 
