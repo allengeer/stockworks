@@ -5,6 +5,10 @@ services:
      - "5001:5000"
     image: "allengeer/scraper"
   tone:
+#    ports:
+#     - "5002:5000"
+    links:
+     - sidecar
     env_file:
      - env.lst
     image: "allengeer/toneanalysis"
@@ -24,3 +28,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "5002:80"
+  sidecar:
+    image: redis
+    volumes:
+     - ".redis:/data"
+    ports:
+     - "6379:6379"

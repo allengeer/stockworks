@@ -5,12 +5,19 @@ import numpy as np
 import time
 import threading
 from threading import Lock
-
+import hashlib
+import redis
 lock = Lock()
+redisCache = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 def scrapeAnalyze(link):
-    q = requests.get("http://localhost:5001/scrape?url=%s" % link)
-    content = q.content.decode('unicode_escape').encode('ascii', 'ignore')
+    sha = hashlib.md5(link).hexdigest()
+    content = redisCache.get(sha)
+    if content is None:
+        q = requests.get("http://localhost:5001/scrape?url=%s" % link)
+        content = q.content.decode('unicode_escape').encode('ascii', 'ignore')
+        redisCache.set(sha,content)
+
     payload = {"text": content}
     headers = {'Content-Type': 'application/json'}
     print "%s Start\t" %link
