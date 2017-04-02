@@ -32,3 +32,11 @@ services:
      - ".redis:/data"
     ports:
      - "6379:6379"
+  mysql:
+    image: mariadb:10.1.22
+    volumes:
+     - ".mysql:/var/lib/mysql"
+    ports:
+     - "3306:3306"
+    env_file:
+     - env.lst
