@@ -17,7 +17,7 @@ CREATE TABLE tone (
    openness float,
    fear float,
    conscientiousness_std float,
-   confidence_std float,tone
+   confidence_std float,
    anger_std float,
    joy_std float,
    sadness_std float,
